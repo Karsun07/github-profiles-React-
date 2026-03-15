@@ -7,6 +7,7 @@ function Main(){
   return (
     <>
       <Header/>
+     
       <Body/>
     </>
    
@@ -14,4 +15,4 @@ function Main(){
 }
 
 const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
-reactRoot.render(<Main />);
+reactRoot.render(<Main/>);

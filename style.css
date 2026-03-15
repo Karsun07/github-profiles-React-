@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(6, 2, 35);
+    overflow-x: hidden;
+}
+#heading{
+    text-align: center;
+    color: greenyellow;
+    
+}
+.githubProfiles{
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 25px;
+    
+}
+img{
+    width: 250px;
+    height: 200px;
+}
+.allten{
+    text-align: center;
+    border: 2px solid white;
+    height: 300px;
+    width: 250px;
+}
+h2{
+    color:greenyellow;
+}
+button{
+    width: 200px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+
