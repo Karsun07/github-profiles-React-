@@ -2,23 +2,23 @@ import { useEffect, useState } from "react";
 
 function Body(){
     const [profiles,setProfile] = useState([]);
-   
-    async function GenerateProfiles(){
-        const resp = await fetch("https://api.github.com/users?per_page=10");
+    const [numberofProfiles,setnuberofProfiles]=useState("");
+    async function GenerateProfiles(count){
+        const resp = await fetch(`https://api.github.com/users?per_page=${count}`);
         const data = await resp.json();
         setProfile(data);
     }
 
     useEffect(()=>{
-        GenerateProfiles();
+        GenerateProfiles(10);
     },[])
     
 
     return (
         <>
         <div className="container">
-            <input type="number" placeholder="                Type Here"></input>
-            <button>Search Profile</button>
+            <input type="text"  value={numberofProfiles} onChange={(e)=>setnuberofProfiles(e.target.value)}></input>
+            <button onClick={()=>GenerateProfiles(Number(numberofProfiles))}>Search Profile</button>
         <div className="githubProfiles">    
             {
             profiles.map((value) => (
