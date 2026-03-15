@@ -4,7 +4,8 @@ function Body(){
     const [profiles,setProfile] = useState([]);
     const [numberofProfiles,setnuberofProfiles]=useState("");
     async function GenerateProfiles(count){
-        const resp = await fetch(`https://api.github.com/users?per_page=${count}`);
+        const ran=Math.floor(1+Math.random()*1000);
+        const resp = await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
         const data = await resp.json();
         setProfile(data);
     }
