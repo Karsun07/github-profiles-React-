@@ -1,43 +1,75 @@
 body{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(6, 2, 35);
-    overflow-x: hidden;
+    margin:0;
+    padding:0;
+    background-color:rgb(6,2,35);
+    overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
 }
+
+
 #heading{
-    text-align: center;
-    color: greenyellow;
-    
+    text-align:center;
+    color:greenyellow;
+    margin-top:20px;
 }
+
+
 .githubProfiles{
-    display: flex;
-    height: 100vh;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding: 25px;
-    
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:30px;
+    padding:40px;
+    max-width:1400px;
+    margin:auto;
+    justify-items:center;
 }
-img{
-    width: 250px;
-    height: 200px;
-}
+
+
 .allten{
-    text-align: center;
-    border: 2px solid white;
-    height: 300px;
-    width: 250px;
+    width:220px;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    transition:all 0.3s ease;
 }
+
+
+.allten:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px rgba(173,255,47,0.6);
+}
+
+
+img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid greenyellow;
+}
+
+
 h2{
     color:greenyellow;
+    margin:15px 0;
 }
-button{
-    width: 200px;
-}
+
+/* Button link */
 a{
-    color: white;
-    text-decoration: none;
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 16px;
+    border-radius:6px;
+    border:1px solid greenyellow;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
 }
 
-
+a:hover{
+    background:greenyellow;
+    color:black;
+}
