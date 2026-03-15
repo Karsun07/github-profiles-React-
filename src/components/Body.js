@@ -21,7 +21,7 @@ function Body(){
                 <div className="allten" key={value.id}>
                     <img src={value.avatar_url} />
                     <h2>{value.login}</h2>
-                    <a href={value.html_url}>Github Profile Link</a>
+                    <a href={value.html_url} target="_blank">Github Profile Link</a>
                 </div>
             ))
             }
