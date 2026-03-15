@@ -15,7 +15,11 @@ function Body(){
     
 
     return (
-        <div className="githubProfiles">
+        <>
+        <div className="container">
+            <input type="number" placeholder="                Type Here"></input>
+            <button>Search Profile</button>
+        <div className="githubProfiles">    
             {
             profiles.map((value) => (
                 <div className="allten" key={value.id}>
@@ -26,6 +30,8 @@ function Body(){
             ))
             }
         </div>
+        </div>
+        </>
     )
 }
 

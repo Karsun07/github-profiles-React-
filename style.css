@@ -56,8 +56,6 @@ h2{
     color:greenyellow;
     margin:15px 0;
 }
-
-/* Button link */
 a{
     display:inline-block;
     margin-top:10px;
@@ -72,4 +70,21 @@ a{
 a:hover{
     background:greenyellow;
     color:black;
+}
+button{
+    height: 25px;
+    
+    color: black;
+     
+    transition: 0.3s ease-in;
+}
+button:hover{
+    background-color: greenyellow;
+    color: white;
+
+}
+input{
+    height: 20px;
+    margin-left: 40vw;
+    margin-right: 10px;
 }
