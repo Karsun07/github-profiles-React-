@@ -17,16 +17,27 @@ function Body(){
         }
     }
 
-    async function generateUser(){
+    // async function generateUser(){
+    //     try{
+    //         const resp = await fetch(`https://api.github.com/users/${user}`);
+    //         const data = await resp.json();
+    //         setProfile([data]);
+    //     }   
+    //     catch(error){
+    //         console.log("Error fetching problem :",user);
+    //     }
+    // }
+    // or
+    const generateUser = useCallback(async ()=>{
         try{
             const resp = await fetch(`https://api.github.com/users/${user}`);
             const data = await resp.json();
             setProfile([data]);
-        }   
-        catch(error){
-            console.log("Error fetching problem :",user);
         }
-    }
+        catch(error){
+            console.log("Error fetching user:", error);
+        }
+    },[user]);
 
     useEffect(()=>{
         GenerateProfiles(10);
