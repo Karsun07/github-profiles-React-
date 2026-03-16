@@ -6,16 +6,26 @@ function Body(){
     const [user,setUser]=useState("");
 
     async function GenerateProfiles(count){
-        const ran=Math.floor(1+Math.random()*1000);
-        const resp = await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
-        const data = await resp.json();
+        try{
+            const ran=Math.floor(1+Math.random()*1000);
+            const resp = await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
+            const data = await resp.json();
         setProfile(data);
+        }
+        catch(error){
+            console.log("Error fetching problem :",error);
+        }
     }
 
     async function generateUser(){
-        const resp = await fetch(`https://api.github.com/users/${user}`);
-        const data = await resp.json();
-        setProfile([data]);   
+        try{
+            const resp = await fetch(`https://api.github.com/users/${user}`);
+            const data = await resp.json();
+            setProfile([data]);
+        }   
+        catch(error){
+            console.log("Error fetching problem :",user);
+        }
     }
 
     useEffect(()=>{
