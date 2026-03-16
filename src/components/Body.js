@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 function Body(){
     const [profiles,setProfile] = useState([]);
     const [numberofProfiles,setnuberofProfiles]=useState("");
+    const [user,setUser]=useState("");
+
     async function GenerateProfiles(count){
         const ran=Math.floor(1+Math.random()*1000);
         const resp = await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
@@ -10,16 +12,25 @@ function Body(){
         setProfile(data);
     }
 
+    async function generateUser(){
+        const resp = await fetch(`https://api.github.com/users/${user}`);
+        const data = await resp.json();
+        setProfile([data]);   
+    }
+
     useEffect(()=>{
         GenerateProfiles(10);
     },[])
-    
 
     return (
         <>
         <div className="container">
-            <input type="text"  value={numberofProfiles} onChange={(e)=>setnuberofProfiles(e.target.value)}></input>
+            <input type="text" value={numberofProfiles} onChange={(e)=>setnuberofProfiles(e.target.value)} />
             <button onClick={()=>GenerateProfiles(Number(numberofProfiles))}>Search Profile</button>
+
+            <input type="text" placeholder="enter username" value={user} onChange={(e)=>setUser(e.target.value)} />
+            <button onClick={generateUser}>Find User</button>
+
         <div className="githubProfiles">    
             {
             profiles.map((value) => (
